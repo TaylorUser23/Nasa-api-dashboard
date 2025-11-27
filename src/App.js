@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Rocket, Calendar, Image, Globe, Loader2, ExternalLink } from 'lucide-react';
 
-const NASA_API_KEY = 'demo_key'; // Using demo key - users should get their own at api.nasa.gov
-
+const NASA_API_KEY = process.env.REACT_APP_NASA_API_KEY || 'DEMO_KEY'; // Using demo key - users should get their own at api.nasa.gov
 export default function NASADashboard() {
   const [apod, setApod] = useState(null);
   const [nasaImages, setNasaImages] = useState([]);
